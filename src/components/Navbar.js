@@ -7,23 +7,20 @@ import SideBar from './SideBar';
 
 
 
-function Navbar() {
+function Navbar({onShowClick}) {
 
-  const [showSidebar,setShowSidebar] = useState(true)
+  
 
 
   return (
     <>
-     { showSidebar && 
-  <div className={showSidebar ? 'sidebar-open' : 'sidebar-closed'}>
-    <SideBar/>
-  </div>
-}
-    <div className='content'>
+    
+    
       <nav  className="navbar">
-        <NavLink onClick= {()=>{setShowSidebar(!showSidebar) 
-          console.log(showSidebar)}} className="myButton" to="/" >Home</NavLink>
-
+        <div className='leftSide'>
+          <RxHamburgerMenu  onClick={onShowClick}/>
+          <NavLink  className="myButton" to="/" >Home</NavLink>
+        </div>
         <div className='rightside'>
           <NavLink to="/shoppingCart">Shopping Cart</NavLink>
           <NavLink to="/signIn">SignIn</NavLink>
@@ -31,7 +28,7 @@ function Navbar() {
         </div>
 
       </nav>
-    </div>
+    
     </>
     
     

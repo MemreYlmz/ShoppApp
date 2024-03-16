@@ -7,7 +7,7 @@ function SideBar() {
     <div className='sidebar'>
         <nav className="sidebar" >
             <div className="sidebarContent">
-                <a href="#">MY PHOTO</a>
+                <a href="#" >MY PHOTO</a>
                 <ul>
                     <li>
                         <a href="">asdas</a>
