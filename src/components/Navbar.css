@@ -1,0 +1,97 @@
+.mainPage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+/* SideBar ölçeklendirme */
+.sidebar{
+    max-width: 15vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden; /* İçeriğin taşmasını önlemek için */
+}
+/*Sidebar içerik düzenlemöe */
+.sidebarContent{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* SideBar a etiketleri görüntüsü*/
+.sidebarContent ul li a{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 8vw;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid orange;
+    text-decoration: none;
+    color: wheat;
+}
+.sidebarContent ul li a:hover{
+    width: 8.5vw;
+    background-color: wheat;
+    color: black;
+    transition: 1.5s all ;
+}
+
+/*Sidebar footer görüntüsü*/
+.Footer{
+    text-align: center;
+    width: 80%;
+    color: white;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+}
+.navbar{
+    height: 10vh;
+    min-width: 85vw;
+    transition: width 2s ;
+    max-width: 100vw;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+.navbar a.active{
+    transition: 1s color;
+    color:black;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar .myButton{
+    margin-left: 2rem;
+    border: 5px solid green;
+    border-radius: 50%;
+}
+
+.rightside{
+    margin-right: 2rem;
+}
+.rightside a{
+    margin-right: 2rem;
+    padding: 0 30px ;
+}
+
+  
