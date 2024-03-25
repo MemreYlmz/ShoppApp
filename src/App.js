@@ -10,16 +10,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import "./components/Navbar.css"
 import SideBar from './components/SideBar';
 
-
-
-
-
 function App() {
 
-  
+  const products= [{marka:"Apple",fiyat:50000},{marka:"Samsung",fiyat:25000},{marka:"Xiaomi",fiyat:15000},{marka:"Oppo",fiyat:10000}]
 
-
-  
 
   const [showSidebar,setShowSidebar] = useState(true)
   const handleShow=()=>{
@@ -27,25 +21,21 @@ function App() {
     console.log(showSidebar)
   }
 
-
   return (
-
     <div className='mainPage'>
-    { showSidebar && <  SideBar/>}
-     
-     
+      {/**  // TODO  :  add SideBar animasyon   */}
+    { showSidebar && <  SideBar  />}
+
       <div className='content'>
     <Navbar onShowClick={handleShow}/>
-    
       <Routes>
-        <Route path='/' element={<MainPage/>}/>
+        <Route path='/' element={<MainPage products={products} /> }/>
         <Route path='/signIn' element={<SignIn/>}/>
         <Route path='/signUp' element={<SignUp/>} />
         <Route path='/shoppingCart' element={<ShoppingCart/>} />
       </Routes>
       </div>
     </div>
-  
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import "../components/Navbar.css"
 
-function SideBar() {
+function SideBar({showSidebar}) {
   return (
     
     <div className='sidebar'>
