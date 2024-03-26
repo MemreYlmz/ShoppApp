@@ -1,11 +1,11 @@
 import React from 'react'
-import "../components/Navbar.css"
+
 
 function SideBar({showSidebar}) {
   return (
     
-    <div className='sidebar'>
-        <nav className="sidebar" >
+    <div className="sidebarr">
+        <nav className="sidebarr">
             <div className="sidebarContent">
                 <a href="#" >MY PHOTO</a>
                 <ul>
