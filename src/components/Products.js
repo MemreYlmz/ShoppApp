@@ -1,8 +1,13 @@
 import React from 'react'
+import Product from './Product'
 
-function Products() {
+function Products({products}) {
   return (
-    <div>Products</div>
+  <div className='ProductsDiv' >
+  {products.map((product)=>{
+    return <Product product={product}   />
+  })}
+    </div>
   )
 }
 

@@ -26,15 +26,12 @@ async function getProducts (){
     }
 }
 
-
-//APİ POST
-
+//APİ POST  signIn ekranı için kullanılacak post
 async function addUser(newUser){
     try{
         const response = await axios.get(`${API_URL}/api/users`,newUser)
         return response.data
     }
-
     catch(err){
         console.error('Error adding todo:', err);
         return null;

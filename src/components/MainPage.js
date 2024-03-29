@@ -1,11 +1,13 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Product from './Product';
+import Products from './Products';
 
 function MainPage({products}) {
   
   return ( 
-    <div>
+    <div style={{height:"90vh"}}>
        <Carousel style={{width:"80%",display:"block",margin:"auto"}}>
       <Carousel.Item >
       <img
@@ -31,17 +33,20 @@ function MainPage({products}) {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    
-     <div>
-      <div> 
-        {products.map((product) => (
-          <div key={product._id}>
-            <p>Marka: {product.productName}</p>
-            <p>Fiyat: {product.productPrice}</p>
-          </div>
-        ))}
-      </div>
-    </div>   
+    {/* 
+    <div>
+        <div> 
+          {products.map((product) => (
+            <div key={product._id}>
+              <p>Marka: {product.productName}</p>
+              <p>Fiyat: {product.productPrice}</p>
+            </div>
+          ))}
+        </div>
+      </div>   
+    */}
+     <Products products={products}  />
+
    </div>
   
   )

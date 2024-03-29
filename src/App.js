@@ -9,27 +9,11 @@ import { useState,useEffect } from 'react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import"./components/Navbar.css"
 import SideBar from './components/SideBar';
+import { FetchData } from './FetchData';
 
 function App() {
-  const [users,setUsers] = useState([])
-  const [products,setProducts] = useState([])
-  // Get UserList
-  useEffect(()=>{
-    async function fetchUsers(){
-      const personList = await getUsers()
-      setUsers(personList)
-    }
-    fetchUsers()
-  },[])
-  // Get ProductList
-  useEffect(()=>{
-    async function fetchProducts(){
-      const productList = await getProducts()
-      setProducts(productList)
-    }
-    fetchProducts()
-  },[])
-  console.log(products)
+ const {users,products} = FetchData()
+ 
 
 
   //console.log(users)  // neden 6 kere çalışıyor bu aq
