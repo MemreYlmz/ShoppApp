@@ -1,8 +1,8 @@
 .mainPage{
     height: 100vh;
+    /*height:140vh yapınca düzeliyor*/
     width: 100vw;
     display: flex;
-   
 }
 
 /* SideBar ölçeklendirme */
@@ -71,7 +71,7 @@ p{
     height: 100vh;
 }
 .navbar{
-    height: 10vh;
+    height: 7vh;
     min-width: 85vw;
     transition: width 2s ;
     max-width: 100vw;
