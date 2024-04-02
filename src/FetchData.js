@@ -21,5 +21,8 @@ export function FetchData() {
     fetchProducts()
   },[])
   return{users,products}
+
+  
 }
 
+  

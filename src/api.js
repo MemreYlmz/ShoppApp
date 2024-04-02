@@ -29,7 +29,8 @@ async function getProducts (){
 //APİ POST  signIn ekranı için kullanılacak post
 async function addUser(newUser){
     try{
-        const response = await axios.get(`${API_URL}/api/users`,newUser)
+        const response = await axios.post(`${API_URL}/api/users`,newUser)
+        console.log("addUser inside",response)
         return response.data
     }
     catch(err){
