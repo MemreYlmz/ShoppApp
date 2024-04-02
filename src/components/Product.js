@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function Product({product}) {
+
   return (
     <div>
       <Card style={{ width: '15rem', marginLeft:"1.5rem" }}>
@@ -20,3 +21,8 @@ function Product({product}) {
 }
 
 export default Product
+
+
+
+      
+    

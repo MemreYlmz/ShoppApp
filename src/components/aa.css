@@ -1,0 +1,30 @@
+ .contentCategory {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .headerCategory {
+    font-size: 30px;
+  }
+  
+  .img-body img {
+    display: flex;
+    margin: 0 auto;
+    height: 40vh;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .img-body {
+    width: 100px;
+    aspect-ratio: 1/1;
+    outline-color: red;
+    display: inline-block;
+  }
+  
+  .containerCategory {
+    margin: 0 auto;
+    width: 70vw;
+    height: 30vh;
+    border-color: white;
+  }
