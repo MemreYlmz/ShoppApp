@@ -5,7 +5,7 @@ function Categories({products}) {
 
   const categorizedProducts = {};
 
-  // Her ürünü kategorisine göre grupla
+  // ürün kategori eşleme
   products.forEach(product => {
     const { productCategory } = product;
     if (!categorizedProducts[productCategory]) {
@@ -15,7 +15,6 @@ function Categories({products}) {
     categorizedProducts[productCategory].push(product);
   });
 
-  // Kategorilere göre döngü yaparak her bir kategori için bir Category bileşeni döndür
   return (
     <div >
       {Object.keys(categorizedProducts).map(category => (

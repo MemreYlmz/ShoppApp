@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from 'react';
-
+import LayoutNav from '../LayoutNav';
 import SideBar from './SideBar';
 
 
