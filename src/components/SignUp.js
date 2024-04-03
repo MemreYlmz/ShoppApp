@@ -1,9 +1,10 @@
 import React from 'react'
 import "./SignUp.css"
-import { NavLink } from 'react-router-dom';
+import { NavLink ,useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import { addUser } from '../api';
 function SignUp() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     userName: '',
     password: '',
@@ -30,8 +31,9 @@ function SignUp() {
         phone: '',
         mail: ''
       })
-      //routelarla anasayfaya yönlendiir
+      
     )
+    navigate("/signIn")
     
     console.log("tıkladım")
     

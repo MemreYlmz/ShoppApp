@@ -2,8 +2,11 @@ import React from 'react'
 import "./SignIn.css"
 import {checkUser} from "../api"
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function SignIn() {
+  const navigate = useNavigate()
   const [formCheck, setFormCheck] = useState({
     userName: '',
     password: ''
@@ -24,8 +27,9 @@ function SignIn() {
         userName: '',
         password: ''    
       })
-      //routelarla anasayfaya yönlendiir
     )
+    navigate("/")
+   
   }
 
   return (
