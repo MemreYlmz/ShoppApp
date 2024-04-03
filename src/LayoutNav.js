@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import SideBar from './components/SideBar'
 import { useState } from 'react'
 
-function LayoutNav({children}) {
+function LayoutNav({children,handleUser}) {
 
     const [showSidebar,setShowSidebar] = useState(true)
     const handleShow=()=>{
@@ -14,7 +14,7 @@ function LayoutNav({children}) {
     <div className="mainPage">
     { showSidebar && <  SideBar  />}
     <div className="content">
-    <Navbar onShowClick={handleShow}/>
+    <Navbar handleUser={handleUser} onShowClick={handleShow}/>
     {children}
     </div>
     </div>

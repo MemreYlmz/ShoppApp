@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function SignIn() {
+function SignIn({handleUser}) {
   const navigate = useNavigate()
   const [formCheck, setFormCheck] = useState({
     userName: '',
@@ -21,6 +21,7 @@ function SignIn() {
     //if içinde formdata.password ve confirmPassword eşleşiyorm u kontrol et ona göre add usera new user ı at yoksa uyarı gönder 
     //kayıt başarılı olunca ana sayfaya at veya popup çıkar
     const userCheck = {userName:formCheck.userName, password:formCheck.password} 
+    handleUser(userCheck.userName)
     checkUser(userCheck).
     then(
       setFormCheck({
@@ -29,6 +30,7 @@ function SignIn() {
       })
     )
     navigate("/")
+    
    
   }
 

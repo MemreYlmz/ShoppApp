@@ -7,7 +7,8 @@ import SideBar from './SideBar';
 
 
 
-function Navbar({onShowClick}) {
+function Navbar({onShowClick,handleUser}) {
+  console.log("insideNavbar handleUserName",handleUser)
 
   return (
     <>
@@ -18,8 +19,14 @@ function Navbar({onShowClick}) {
         </div>
         <div className="rightside">
           <NavLink to="/shoppingCart">Shopping Cart</NavLink>
-          <NavLink to="/signIn">SignIn</NavLink>
-          <NavLink to="/signUp">SignUp</NavLink>
+          {handleUser ? ( // Eğer kullanıcı giriş yaptıysa, kullanıcı adını göster
+            <span>{handleUser}</span>
+          ) : (
+            <>
+              <NavLink to="/signIn">SignIn</NavLink>
+              <NavLink to="/signUp">SignUp</NavLink>
+            </>
+          )}
         </div>
 
       </nav>

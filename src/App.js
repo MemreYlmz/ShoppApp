@@ -12,6 +12,8 @@ import LayoutWithoutNav from './LayoutWithoutNav';
 
 function App() {
  const {users,products} = FetchData()
+ const [userName,setUserName] = useState("")
+
 
 
   
@@ -19,7 +21,7 @@ function App() {
     <>
       <Routes>
 
-          <Route path='/' element={<LayoutNav> 
+          <Route path='/' element={<LayoutNav handleUser={userName}> 
             <MainPage products={products} />
           </LayoutNav>} />
 
@@ -29,7 +31,7 @@ function App() {
           
 
           <Route path='/signIn' element={<LayoutWithoutNav> 
-            <SignIn />
+            <SignIn handleUser={setUserName} />
           </LayoutWithoutNav>} />
 
           <Route path='/signUp' element={<LayoutWithoutNav> 
