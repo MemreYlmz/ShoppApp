@@ -11,24 +11,37 @@ function Navbar({onShowClick,handleUser}) {
 
   return (
     <>
-      <nav  className="navbar">
+       <nav className="navbar">
+  
+    {handleUser ? (
+      <>
+        
         <div className="leftSide">
-          <RxHamburgerMenu  onClick={onShowClick}/>
-          <NavLink  className="myButton" to="/" >Home</NavLink>
+        <RxHamburgerMenu onClick={onShowClick}/>
+        <NavLink className="myButton" to="/userHome">Home</NavLink>
         </div>
         <div className="rightside">
           <NavLink to="/shoppingCart">Shopping Cart</NavLink>
-          {handleUser ? ( // Eğer kullanıcı giriş yaptıysa, kullanıcı adını göster
-            <span>{handleUser}</span>
-          ) : (
-            <>
-              <NavLink to="/signIn">SignIn</NavLink>
-              <NavLink to="/signUp">SignUp</NavLink>
-            </>
-          )}
+          <span>{handleUser}</span>
         </div>
-
-      </nav>
+        
+      </>
+    ) : (
+      <>
+          <div className="leftSide">
+          <RxHamburgerMenu onClick={onShowClick}/>
+        <NavLink className="myButton" to="/">Ana Sayfa</NavLink>
+        </div>
+        <div className="rightside">
+          <NavLink to="/signIn">SignIn</NavLink>
+          <NavLink to="/signUp">SignUp</NavLink>
+        </div>
+        
+      </>
+    )}
+  
+ 
+</nav>
     
     </>
   )

@@ -18,11 +18,15 @@ function App() {
     <>
       <Routes>
 
-          <Route path='/' element={<LayoutNav handleUser={userName}> 
+          <Route path='/' element={<LayoutNav > 
             <MainPage products={products} />
           </LayoutNav>} />
 
-          <Route path='/shoppingCart' element={<LayoutNav> 
+          <Route path='/userHome' element={<LayoutNav handleUser={userName}> 
+            <MainPage products={products} />
+          </LayoutNav>} />
+
+          <Route path='/shoppingCart' element={<LayoutNav handleUser={userName}> 
             <ShoppingCart />
           </LayoutNav>} />
           

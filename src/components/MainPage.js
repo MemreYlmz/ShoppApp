@@ -10,11 +10,8 @@ function MainPage({products}) {
   
   return ( 
     <div>
-
      <Slider />
      <Categories products={products}/>
-     
-
    </div>
   
   )

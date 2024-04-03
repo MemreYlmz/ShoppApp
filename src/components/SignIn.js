@@ -26,7 +26,7 @@ function SignIn({handleUser}) {
       if (userData) {
         handleUser(userData.userName);
         setFormCheck({ userName: '', password: '' });
-        navigate('/');
+        navigate('/userHome');
       } else {
         console.log('Kullanıcı bulunamadı');
         // Kullanıcıya hata mesajı gösterilebilir
