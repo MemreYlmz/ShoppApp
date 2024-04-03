@@ -10,7 +10,6 @@ function Categories({products}) {
     const { productCategory } = product;
     if (!categorizedProducts[productCategory]) {
       categorizedProducts[productCategory] = [];
-      console.log(categorizedProducts)
     }
     categorizedProducts[productCategory].push(product);
   });

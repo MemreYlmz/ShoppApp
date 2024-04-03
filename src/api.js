@@ -30,7 +30,6 @@ async function getProducts (){
 async function addUser(newUser){
     try{
         const response = await axios.post(`${API_URL}/api/users`,newUser)
-        console.log("addUser inside",response)
         return response.data
     }
     catch(err){
@@ -42,7 +41,7 @@ async function addUser(newUser){
 async function checkUser(userCheck){
     try{
         const response = await axios.post(`${API_URL}/api/users/checkUser`,userCheck)
-        console.log(response.data)
+        console.log(response.data,"checkUser api.js sayfası")
         return response.data
     }
     catch(err){

@@ -14,9 +14,6 @@ function App() {
  const {users,products} = FetchData()
  const [userName,setUserName] = useState("")
 
-
-
-  
   return (
     <>
       <Routes>

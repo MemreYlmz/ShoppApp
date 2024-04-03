@@ -16,23 +16,26 @@ function SignIn({handleUser}) {
     setFormCheck({...formCheck, [e.target.id]: e.target.value})
   }
 
-  const handleSubmit=(e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //if içinde formdata.password ve confirmPassword eşleşiyorm u kontrol et ona göre add usera new user ı at yoksa uyarı gönder 
-    //kayıt başarılı olunca ana sayfaya at veya popup çıkar
-    const userCheck = {userName:formCheck.userName, password:formCheck.password} 
-    handleUser(userCheck.userName)
-    checkUser(userCheck).
-    then(
-      setFormCheck({
-        userName: '',
-        password: ''    
-      })
-    )
-    navigate("/")
+    const userCheck = { userName: formCheck.userName, password: formCheck.password };
     
-   
-  }
+    try {
+      const userData = await checkUser(userCheck);
+      
+      if (userData) {
+        handleUser(userData.userName);
+        setFormCheck({ userName: '', password: '' });
+        navigate('/');
+      } else {
+        console.log('Kullanıcı bulunamadı');
+        // Kullanıcıya hata mesajı gösterilebilir
+      }
+    } catch (error) {
+      console.error('Giriş işlemi hatası:', error);
+      // Hata durumunda gerekli işlemler yapılabilir
+    }
+  };
 
   return (
     <>

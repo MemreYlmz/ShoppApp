@@ -35,8 +35,6 @@ function SignUp() {
     )
     navigate("/signIn")
     
-    console.log("tıkladım")
-    
   };
 
   return (

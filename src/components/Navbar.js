@@ -8,7 +8,6 @@ import SideBar from './SideBar';
 
 
 function Navbar({onShowClick,handleUser}) {
-  console.log("insideNavbar handleUserName",handleUser)
 
   return (
     <>

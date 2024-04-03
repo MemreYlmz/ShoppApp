@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function ShoppingCart() {
   return (
-    <div>dasdasds</div>
+    <div>
+
+    </div>
   )
 }
 
