@@ -39,6 +39,22 @@ async function addUser(newUser){
     }
 }
 
+async function checkUser(userCheck){
+    try{
+        const response = await axios.post(`${API_URL}/api/users/checkUser`,userCheck)
+        console.log(response.data)
+        return response.data
+    }
+    catch(err){
+        console.error('Error adding todo:', err);
+        return null;
+    }
+}
+
+//post ile signIn için backened de kullanıcı adı ve şifre gönderilecek
+//backened de ki yol api/users/checkUser yolu
+//Kullanıcı bulunursa  backendden gelen kullanıcı bilgileri dönecek buraya yooksa null dönecek 
+//null dönerse if ile hata mesaju döndür fe de
 
 
-export {getUsers,getProducts,addUser}
+export {getUsers,getProducts,addUser,checkUser}

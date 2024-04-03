@@ -2,7 +2,6 @@ import React from 'react'
 import "./SignUp.css"
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import axios from 'axios';
 import { addUser } from '../api';
 function SignUp() {
   const [formData, setFormData] = useState({
