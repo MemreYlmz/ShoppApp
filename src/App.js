@@ -10,9 +10,12 @@ import { FetchData } from './FetchData';
 import LayoutNav from './LayoutNav';
 import LayoutWithoutNav from './LayoutWithoutNav';
 
+
 function App() {
+
  const {users,products} = FetchData()
  const [userName,setUserName] = useState("")
+
 
   return (
     <>
@@ -22,12 +25,12 @@ function App() {
             <MainPage products={products} />
           </LayoutNav>} />
 
-          <Route path='/userHome' element={<LayoutNav handleUser={userName}> 
+          <Route path='/userHome' element={<LayoutNav handleUser={userName} setHandleUser={setUserName}> 
             <MainPage products={products} />
           </LayoutNav>} />
 
-          <Route path='/shoppingCart' element={<LayoutNav handleUser={userName}> 
-            <ShoppingCart />
+          <Route path='/shoppingCart' element={<LayoutNav handleUser={userName} setHandleUser={setUserName}> 
+            <ShoppingCart   />
           </LayoutNav>} />
           
 

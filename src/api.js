@@ -50,6 +50,7 @@ async function checkUser(userCheck){
     }
 }
 
+
 //post ile signIn için backened de kullanıcı adı ve şifre gönderilecek
 //backened de ki yol api/users/checkUser yolu
 //Kullanıcı bulunursa  backendden gelen kullanıcı bilgileri dönecek buraya yooksa null dönecek 
