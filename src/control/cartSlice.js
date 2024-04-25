@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cartItems: [],
-  quantity: 5,
+  quantity: 0,
   //db de quantity eklemen gerek
   total: 0,
 };
@@ -13,13 +13,12 @@ const cartSlice = createSlice({
     name:"cart",
     initialState,
     reducers:{
-        //clearCart:(state)=>{
-        //    state.cartItems = []
-        //  },
+        clearCart:(state)=>{
+            state.cartItems = []
+          },
         
         addItemToCard:(state,action)=>{
            
-
             const newItem = action.payload
            // add newitem to cartitems
            return {
@@ -27,6 +26,11 @@ const cartSlice = createSlice({
             cartItems: [...state.cartItems, newItem], // Yeni ürünü ekleyerek yeni bir dizi oluşturuyoruz
           };
 
+          },
+          removeItem:(state,action)=>{
+            console.log(action.payload)
+            const itemId = action.payload
+            state.cartItems = state.cartItems.filter((item)=>item._id!==itemId)
           },
 
         calculateTotal:(state)=>{
