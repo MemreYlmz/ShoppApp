@@ -14,3 +14,11 @@
     height:80vh;
     margin:2rem 2rem
 }
+
+.buy-product-firstDiv{
+    display:flex;
+    justify-content:space-between;
+}
+.buy-product-img{
+    width:15vw;
+}

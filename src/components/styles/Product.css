@@ -1,0 +1,12 @@
+.product-card{
+    width:15rem;
+     margin-left:1.5rem;
+}
+.product-card-img{
+    max-height: 126.11px;
+    max-width: 158px;
+    object-fit: contain;
+}
+.product-btn{
+    padding:0.5rem;
+}

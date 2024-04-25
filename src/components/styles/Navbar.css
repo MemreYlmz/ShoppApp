@@ -121,3 +121,13 @@ svg{
 
 }
 
+
+.slider-carousel{
+    width:80%;
+    display:block;
+    margin:auto
+}
+.carouselItem-img{
+    width:100%;
+    height:25vh;
+}

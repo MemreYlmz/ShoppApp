@@ -2,11 +2,12 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import { removeItem,increase ,decrease} from '../../control/cartSlice';
+import "../styles/ShoppingCard.css"
 function BuyProduct({ _id,productName,productPrice,productImg }) {
     const dispatch = useDispatch()
   return (
-    <div style={{display:"flex",justifyContent:"space-between"}} >
-      <img style={{width:"15vw"}} src={productImg} alt="" />
+    <div className='buy-product-firstDiv' >
+      <img className='buy-product-img'  src={productImg} alt="" />
       <div >
         <h5>{productName}</h5>
         <h5>{productPrice}TL</h5>

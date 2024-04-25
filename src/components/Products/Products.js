@@ -23,14 +23,6 @@ function Products({products}) {
         </div>
       ))}
     </Slider>
-   
-   {/* 
-    <div className='ProductsDiv' >
-  {products.map((product)=>{
-    return <Product product={product}   />
-  })}
-    </div>
-  */} 
   </>
   )
 }
