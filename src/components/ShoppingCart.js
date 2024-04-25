@@ -9,6 +9,7 @@ function ShoppingCart() {
   //};
   const dispatch = useDispatch()
   const { cartItems, quantity, total } = useSelector((store) => store.cart);
+  console.log(cartItems,"adasdasdas")
   return (
     
     <><div style={{display:"flex", justifyContent:"space-between" }}>
@@ -32,7 +33,15 @@ function ShoppingCart() {
      
     </Accordion>
     <div style={{width:"20vw",height:"60vh",backgroundColor:"blue",marginRight:"3rem",marginTop:"2rem"}}>
-
+    <h2>Summary</h2>
+      <ul>
+            {cartItems.map((item) => (
+              <li key={item._id}>
+                <p>{item.productName} - ${item.productPrice.toFixed(cartItems.length)} - ({item.quantity})</p>
+              </li>
+            ))}
+          </ul>
+          <p>Total: ${total.toFixed(cartItems.length)}</p>
     </div>
     </div>
     </>

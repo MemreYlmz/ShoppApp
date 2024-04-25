@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cartItems: [],
-  quantity: 2,
+  quantity: 0,
   //db de quantity eklemen gerek
   total: 0,
 };
