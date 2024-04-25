@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import { useSelector } from 'react-redux';
 
 function Navbar({onShowClick,handleUser,setHandleUser}) {
-
-  console.log(handleUser)
+  const { quantity } = useSelector((store) => store.cart);
+  console.log(useSelector((store) => store.cart));
+  
 
   const handleLogout = ()=>{
     setHandleUser(null)
@@ -23,6 +24,7 @@ function Navbar({onShowClick,handleUser,setHandleUser}) {
               <NavLink className="myButton" to="/userHome">Home</NavLink>
               </div>
               <div className="rightside">
+                <p>{quantity}</p>
                 <NavLink to="/shoppingCart">Shopping Cart</NavLink>
                 <button onClick={handleLogout}>LogOut</button>
                 <span>{handleUser}</span>

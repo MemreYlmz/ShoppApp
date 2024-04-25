@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { addItemToCard } from '../control/cartSlice';
+import { addItemToCard,increase } from '../control/cartSlice';
 import {useDispatch } from 'react-redux';
 
 
@@ -9,10 +9,11 @@ function Product({product }) {
 
   const dispatch = useDispatch()
   
-  //const handleClickProduct = () => {
-  //  addToCart(product);
-  //  
-  //};
+  const handleClickProduct = () => {
+    dispatch(addItemToCard(product));
+    dispatch(increase(product.id))
+    
+  };
 
   return (
     <div>
@@ -23,7 +24,7 @@ function Product({product }) {
         <Card.Title>{product.productName}</Card.Title>
         <Card.Text>
         </Card.Text>
-        <Button onClick={()=>dispatch(addItemToCard(product))} style={{padding:"0.5rem"}} variant="primary"  >Purchase</Button>
+        <Button onClick={handleClickProduct} style={{padding:"0.5rem"}} variant="primary"  >Purchase</Button>
       </Card.Body>
 
     </Card>
