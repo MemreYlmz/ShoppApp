@@ -1,7 +1,7 @@
 import React from 'react'
-import Products from './Products'
+import Products from '../Products/Products'
 import Slider from "react-slick";
-import "./aa.css"
+import "../styles/aa.css"
 
 function Category({products}) {
   const categoryNames = [...new Set(products.map(product => product.productCategory))];

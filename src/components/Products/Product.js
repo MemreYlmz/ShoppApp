@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { addItemToCard,increase } from '../control/cartSlice';
+import { addItemToCard,increase } from '../../control/cartSlice';
 import {useDispatch } from 'react-redux';
 
 

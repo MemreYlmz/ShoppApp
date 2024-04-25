@@ -1,40 +1,40 @@
 import React from 'react'
-import "./SignIn.css"
-import {checkUser} from "../api"
+import "../styles/SignUp.css"
+import { NavLink ,useNavigate} from 'react-router-dom';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-
-function SignIn({handleUser}) {
+import { addUser } from '../../api';
+function SignUp() {
   const navigate = useNavigate()
-  const [formCheck, setFormCheck] = useState({
+  const [formData, setFormData] = useState({
     userName: '',
-    password: ''
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    mail: ''
   });
-
-  const handleChange=(e)=>{
-    setFormCheck({...formCheck, [e.target.id]: e.target.value})
-  }
+  const handleChange = (e) => { 
+      setFormData({...formData, [e.target.id]: e.target.value})
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userCheck = { userName: formCheck.userName, password: formCheck.password };
+    //if içinde formdata.password ve confirmPassword eşleşiyorm u kontrol et ona göre add usera new user ı at yoksa uyarı gönder 
+    //kayıt başarılı olunca ana sayfaya at veya popup çıkar
+    const newUser = {userName:formData.userName, password:formData.password , phone:formData.phone, mail:formData.mail} 
     
-    try {
-      const userData = await checkUser(userCheck);
+    addUser(newUser).
+    then(
+      setFormData({
+        userName: '',
+        password: '',
+        confirmPassword: '',
+        phone: '',
+        mail: ''
+      })
       
-      if (userData) {
-        handleUser(userData.userName);
-        setFormCheck({ userName: '', password: '' });
-        navigate('/userHome');
-      } else {
-        console.log('Kullanıcı bulunamadı');
-        // Kullanıcıya hata mesajı gösterilebilir
-      }
-    } catch (error) {
-      console.error('Giriş işlemi hatası:', error);
-      // Hata durumunda gerekli işlemler yapılabilir
-    }
+    )
+    navigate("/signIn")
+    
   };
 
   return (
@@ -76,20 +76,30 @@ function SignIn({handleUser}) {
     <span /> <span /> <span /> <span />
     <div className="signin">
       <div className="content">
-        <h2>Sign In</h2>
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="inputBox">
-            <input type="text" required="" id='userName' value={formCheck.userName} onChange={handleChange} /> <i>Username</i>
+        <h2>Sign Up</h2>
+        <form className="form"  onSubmit={handleSubmit}>
+        <div className="inputBox">
+            <input type="text" id='mail' required="" value={formData.mail} onChange={handleChange}/> <i>E-Mail</i>
           </div>
           <div className="inputBox">
-            <input type="password" required="" id='password' value={formCheck.password} onChange={handleChange} /> <i>Password</i>
+            <input type="text" id='userName' required="" value={formData.userName} onChange={handleChange} /> <i>Username</i>
+          </div>
+          <div className="inputBox">
+            <input type="password" id='password' required=""  value={formData.password} onChange={handleChange} /> <i>Password</i>
+          </div>
+          <div className="inputBox">
+            <input type="password" id='confirmPassword' required="" value={formData.confirmPassword} onChange={handleChange}/> <i> Check Password</i>
+          </div>
+          <div className="inputBox">
+            <input type="text" id='phone' required="" value={formData.phone} onChange={handleChange} /> <i> Phone Number</i>
           </div>
           <div className="links">
             {" "}
-            <a href="#">Forgot Password</a> <a href="#">Signup</a>
+             <a href="#">SignIn</a>
           </div>
           <div className="inputBox">
-            <input type="submit" defaultValue="Login" />
+            <input type="submit"  defaultValue="SignUp" />
+            <NavLink  className="SignUpButton" to="/SignIn" >SignUp</NavLink>
           </div>
         </form>
       </div>
@@ -99,4 +109,4 @@ function SignIn({handleUser}) {
   )
 }
 
-export default SignIn
+export default SignUp

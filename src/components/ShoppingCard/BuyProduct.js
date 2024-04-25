@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
-import { removeItem,increase ,decrease} from '../control/cartSlice';
+import { removeItem,increase ,decrease} from '../../control/cartSlice';
 function BuyProduct({ _id,productName,productPrice,productImg }) {
     const dispatch = useDispatch()
   return (
