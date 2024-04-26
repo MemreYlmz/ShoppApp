@@ -15,10 +15,50 @@
     margin:2rem 2rem
 }
 
-.buy-product-firstDiv{
-    display:flex;
-    justify-content:space-between;
+
+/*BuyProduct Page*/
+
+.buy-product-firstDiv {
+    display: flex;
+    align-items: center;
 }
-.buy-product-img{
-    width:15vw;
+
+.buy-product-img {
+    width: 100px; /* İmgenin genişliğini ayarla */
+    height: auto; /* İmgenin yüksekliğini otomatik olarak ayarla */
+}
+
+.product-details {
+    flex: 1; /* İçeriği uzunluğuna göre genişlet */
+    display: flex;
+    justify-content: space-between; /* Bilgi ve butonları aralarında boşluk bırakarak hizala */
+    align-items: center; /* Dikeyde hizala */
+}
+
+.product-info {
+    margin: auto; /* Bilgi ile buton arasındaki boşluğu ayarla */
+    
+}
+
+.quantity-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Butonları sağa hizala */
+}
+.quantity-controls p{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.removebtn{
+    margin: 0.5rem;
+    border-radius: 50%;
+    width: 2rem;
+    background-color: red;
+    color: white;
 }
