@@ -3,10 +3,11 @@
      margin-left:1.5rem;
 }
 .product-card-img{
-    max-height: 126.11px;
+    max-height: 10vh;
     max-width: 158px;
     object-fit: contain;
+    margin: auto;
 }
 .product-btn{
-    padding:0.5rem;
+    padding:0.3rem;
 }

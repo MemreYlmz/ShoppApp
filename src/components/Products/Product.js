@@ -24,6 +24,7 @@ function Product({product }) {
       <Card.Body>
         <Card.Title>{product.productName}</Card.Title>
         <Card.Text>
+          ₺{product.productPrice}
         </Card.Text>
         <Button onClick={handleClickProduct} className='product-btn' variant="primary"  >Purchase</Button>
       </Card.Body>
