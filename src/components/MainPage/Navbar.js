@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function Navbar({onShowClick,handleUser,setHandleUser}) {
   const { quantity } = useSelector((store) => store.cart);
   console.log(useSelector((store) => store.cart));
-  
+  console.log(handleUser,"inNavbar handleuser")
 
   const handleLogout = ()=>{
     setHandleUser(null)
@@ -17,7 +17,7 @@ function Navbar({onShowClick,handleUser,setHandleUser}) {
   return (
     <>
        <nav className="navbar">
-          {handleUser !== null && handleUser !== "" ? (
+          {handleUser !== null && handleUser !== "" && handleUser!==undefined ? (
             <>
               <div className="leftSide">
               <RxHamburgerMenu onClick={onShowClick}/>

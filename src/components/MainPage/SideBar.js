@@ -1,7 +1,8 @@
 import React from 'react'
 
 
-function SideBar({showSidebar}) {
+function SideBar({showidebar}) {
+    //iletişim linkleri ekleyebilirisn
   return (
     
     <div className="sidebarr">
