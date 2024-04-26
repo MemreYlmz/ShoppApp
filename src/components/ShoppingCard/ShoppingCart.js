@@ -36,14 +36,15 @@ function ShoppingCart() {
     </Accordion>
     <div className='summary-card'>
     <h2>Summary</h2>
-      <ul>
+      <ul className='summary-ul'>
             {cartItems.map((item) => (
-              <li key={item._id}>
-                <p>{item.productName} - ${item.productPrice.toFixed(cartItems.length)} - ({item.quantity})</p>
+              <li className='summary-li' key={item._id}>
+                <p>{item.productName} - ₺{item.productPrice.toFixed(cartItems.length)} - ({item.quantity})</p>
               </li>
             ))}
           </ul>
-          <p>Total: ${total.toFixed(cartItems.length)}</p>
+          <hr></hr>
+          <p>Total: ₺{total.toFixed(cartItems.length)}</p>
     </div>
     </div>
     </>
