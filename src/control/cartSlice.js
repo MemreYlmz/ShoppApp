@@ -37,11 +37,20 @@ const cartSlice = createSlice({
        
 
           },
-          removeItem:(state,action)=>{
-            console.log(action.payload)
-            const itemId = action.payload
-            state.cartItems = state.cartItems.filter((item)=>item._id!==itemId)
-          },
+          removeItem: (state, action) => {
+            const itemId = action.payload;
+            const itemToRemove = state.cartItems.find(item => item._id === itemId);
+        
+            if (itemToRemove) {
+                // Öğenin miktarını düşür
+                state.quantity -= itemToRemove.quantity;
+                // Öğenin toplam fiyatını düşür
+                state.total -= itemToRemove.productPrice * itemToRemove.quantity;
+        
+                // Öğeyi sepetten kaldır
+                state.cartItems = state.cartItems.filter(item => item._id !== itemId);
+            }
+        },
 
          increase:(state,action)=>{
             //const cartItem= state.cartItems.find((item)=> item.id === action.payload)
