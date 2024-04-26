@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useSelector } from 'react-redux';
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 function Navbar({onShowClick,handleUser,setHandleUser}) {
   const { quantity } = useSelector((store) => store.cart);
@@ -23,11 +24,15 @@ function Navbar({onShowClick,handleUser,setHandleUser}) {
               <RxHamburgerMenu onClick={onShowClick}/>
               <NavLink className="myButton" to="/userHome">Home</NavLink>
               </div>
+              
               <div className="rightside">
+                <div className='shopcard'>
                 <p>{quantity}</p>
-                <NavLink to="/shoppingCart">Shopping Cart</NavLink>
-                <button onClick={handleLogout}>LogOut</button>
+                <NavLink to="/shoppingCart"><HiOutlineShoppingCart className='iconshop' /></NavLink>
+                </div>
+                <button onClick={handleLogout} >LogOut</button>
                 <span>{handleUser}</span>
+              
               </div>
             </>
           ) : (

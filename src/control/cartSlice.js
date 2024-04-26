@@ -58,19 +58,26 @@ const cartSlice = createSlice({
               return item
             })
            },
-        decrease:(state,action)=>{
-          state.cartItems = state.cartItems.map((item)=>{
-
-            if(item._id === action.payload){
-              state.quantity-=1
-              // eğer 0 dan küçükse item'ı state.cartitems dan çıkar
-              state.total-=item.productPrice
-              
-              return {...item,quantity:item.quantity-1}
-            }
-            return item
-          })
-         },
+           decrease: (state, action) => {
+            state.cartItems = state.cartItems.map((item) => {
+                if (item._id === action.payload) {
+                    if (item.quantity > 0) {
+                        state.quantity -= 1;
+                        state.total -= item.productPrice;
+                        const updatedItem = { ...item, quantity: item.quantity - 1 };
+                        if (updatedItem.quantity === 0) {
+                            // If quantity becomes zero, remove the item from cart
+                            state.cartItems = state.cartItems.filter(
+                                (cartItem) => cartItem._id !== item._id
+                            );
+                        }
+                        return updatedItem;
+                    }
+                }
+                return item;
+            });
+        },
+        
          }
     }
 )
